@@ -5,28 +5,21 @@ from math import sqrt
 app = Flask(__name__)
 
 @app.route('/')
-def nao_entre_em_panico():
-    limite = 100
+def nao_entre_em_panico():   
+    m = 50
+    n = 0
+    n1 = 1
+    e = 0
+    cont = "0, 1,"
 
-    x = 1
-    y = 1
-    numero = 3
+    for e in range(e, m):
+        x = n1
+        n1 = n1 + n
+        n = x
+        e = e + 1
+        cont += str(n1) + ","
 
-    primos = "2,"
-
-    while y < limite:
-        ehprimo = 1
-        for i in range(2, numero):
-            if numero % i == 0:
-                ehprimo = 0
-                break
-        if (ehprimo):
-            primos = primos + str(numero) + ","
-            y += 1
-            
-        numero += 1
-
-    return primos
+    return cont
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
